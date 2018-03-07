@@ -12,7 +12,8 @@
   "author": "Ryan Dorman",
   "license": "ISC",
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "progressbar.js": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",

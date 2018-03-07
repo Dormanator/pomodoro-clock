@@ -7,15 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pomodoro Clock</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-        <h1>Pomodoro Clock</h1>
         <div class="clock">
-            <h2 class="clock__display" id="clock_display">0</h2>
-            <input class="clock__input" type="text" name="input" id="clock_input">
-            <button class="clock__btn-start" id="clock_start">Start</button>
+
+            <div class="clock__progress" id="clock-progress"></div>
+
+            <div class="clock__display" id="clock-display">00:00</div>
+
+            <div class="clock__config" id="clock-config">
+                <div class="clock__config-option">
+                    <p>Work Length</p>
+                    <input class="clock__config-input" type="number" name="input" id="work-interval" value="25" min="1" max="120">
+                </div>
+                <div class="clock__config-option">
+                    <p>Break Length</p>
+                    <input class="clock__config-input" type="number" name="input" id="break-interval" value="5" min="1" max="120">
+                </div>
+            </div>
+            <div class="clock__state-icon">
+                <i class="fas fa-fire fa-2x" id="clock-state-icon"></i>
+                <!-- fa-coffee -->
+            </div>
+            <a class="btn clock__reset" id="clock-reset">
+                <i class="fas fa-lg fa-times"></i>
+            </a>
+            <a class="btn clock__settings" id="clock-config-toggle">
+                <i class="fas fa-cog fa-lg"></i>
+            </a>
+
         </div>
     </div>
 

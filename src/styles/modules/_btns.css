@@ -1,0 +1,25 @@
+.btn {
+    cursor: pointer;
+}
+
+.clock {
+    &__reset {
+        position: fixed;
+        top: calc(50% + 100px);
+        left: calc(50% - 100px);
+
+        @mixin atSmall {
+            top: calc(50% + 120px);
+        }
+    }
+
+    &__settings {
+        position: fixed;
+        top: calc(50% + 100px);
+        right: calc(50% - 100px);
+
+        @mixin atSmall {
+            top: calc(50% + 120px);
+        }
+    }
+}

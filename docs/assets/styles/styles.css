@@ -345,10 +345,150 @@ template {
     box-sizing: border-box;
 }
 
+body {
+    // background: #74ebd5;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #202020;
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* For Firefox */
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .wrapper {
     padding: 15px;
 }
 
-.clock {
-    
+.clock__progress {
+    width: 225px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    }
+
+@media (min-width: 640px) {
+
+.clock__progress {
+            width: 450px
+    }
+    }
+
+.clock__progress--break path {
+            stroke: #33ccff;
+        }
+
+.clock__display {
+        font-size: 5rem;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+@media (min-width: 640px) {
+
+.clock__display {
+            font-size: 8rem
+    }
+    }
+
+.clock__state-icon {
+        position: fixed;
+        top: calc(50% + 70px);
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+
+@media (min-width: 640px) {
+
+.clock__state-icon {
+            font-size: 1.25rem;
+            top: calc(50% + 100px)
+    }
+    }
+
+.clock__config {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        width: 300px;
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+    }
+
+.clock__config-input {
+            background: transparent;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+            border: 1px solid #fff;
+
+        }
+
+.clock__config-option {
+            padding: 0 25px;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+.clock__config-option p {
+                padding: 3px 0;
+                margin: 0;
+            }
+
+.btn {
+    cursor: pointer;
 }
+
+.clock__reset {
+        position: fixed;
+        top: calc(50% + 100px);
+        left: calc(50% - 100px);
+    }
+
+@media (min-width: 640px) {
+
+.clock__reset {
+            top: calc(50% + 120px)
+    }
+    }
+
+.clock__settings {
+        position: fixed;
+        top: calc(50% + 100px);
+        right: calc(50% - 100px);
+    }
+
+@media (min-width: 640px) {
+
+.clock__settings {
+            top: calc(50% + 120px)
+    }
+    }

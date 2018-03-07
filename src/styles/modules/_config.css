@@ -1,0 +1,36 @@
+.clock {
+    &__config {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        width: 300px;
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &-input {
+            background: transparent;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+            border: 1px solid #fff;
+
+        }
+
+        &-option {
+            padding: 0 25px;
+            font-size: 1.25rem;
+            text-align: center;
+
+            p {
+                padding: 3px 0;
+                margin: 0;
+            }
+        }
+    }
+}

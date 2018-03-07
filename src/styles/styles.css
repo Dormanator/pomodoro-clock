@@ -2,4 +2,8 @@
 @import 'base/_mixins';
 @import 'base/_global';
 @import 'modules/_wrapper';
-@import 'modules/_clock';
+@import 'modules/_progress';
+@import 'modules/_display';
+@import 'modules/_state';
+@import 'modules/_config';
+@import 'modules/_btns';
