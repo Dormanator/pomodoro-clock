@@ -11,7 +11,7 @@
         transform: translateX(-50%);
 
         &-input {
-            background: transparent;
+            background: rgba(#ffffff, 0.1);
             width: 80px;
             height: 40px;
             margin: 0 auto;

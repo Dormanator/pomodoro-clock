@@ -19,27 +19,29 @@
 
             <div class="clock__display" id="clock-display">00:00</div>
 
-            <div class="clock__config" id="clock-config">
-                <div class="clock__config-option">
-                    <p>Work Length</p>
-                    <input class="clock__config-input" type="number" name="input" id="work-interval" value="25" min="1" max="120">
-                </div>
-                <div class="clock__config-option">
-                    <p>Break Length</p>
-                    <input class="clock__config-input" type="number" name="input" id="break-interval" value="5" min="1" max="120">
-                </div>
-            </div>
             <div class="clock__state-icon">
                 <i class="fas fa-fire fa-2x" id="clock-state-icon"></i>
                 <!-- fa-coffee -->
             </div>
+
             <a class="btn clock__reset" id="clock-reset">
-                <i class="fas fa-lg fa-times"></i>
+                Reset
             </a>
             <a class="btn clock__settings" id="clock-config-toggle">
-                <i class="fas fa-cog fa-lg"></i>
+                Options
             </a>
 
+        </div>
+
+        <div class="clock__config" id="clock-config">
+            <div class="clock__config-option">
+                <p>Work Length</p>
+                <input class="clock__config-input" type="number" name="input" id="work-interval" value="25" min="1" max="120">
+            </div>
+            <div class="clock__config-option">
+                <p>Break Length</p>
+                <input class="clock__config-input" type="number" name="input" id="break-interval" value="5" min="1" max="120">
+            </div>
         </div>
     </div>
 

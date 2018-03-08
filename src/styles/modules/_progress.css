@@ -1,6 +1,6 @@
 .clock {
     &__progress {
-    width: 225px;
+    width: 300px;
     position: fixed;
     top: 50%;
     left: 50%;

@@ -167,13 +167,19 @@ const Pomodoro = function () {
     function determineTimerStateUi() {
         switch (currentTimerState) {
             case 0:
+                OPTIONS.display.classList.add('clock__display--pulse');
+                OPTIONS.timerStateIcon.classList.replace('fa-coffee', 'fa-fire');
+                OPTIONS.progressBar.classList.remove('clock__progress--break');
+                break;
             case 1:
                 OPTIONS.timerStateIcon.classList.replace('fa-coffee', 'fa-fire');
                 OPTIONS.progressBar.classList.remove('clock__progress--break');
+                OPTIONS.display.classList.remove('clock__display--pulse');
                 break;
             case 2:
                 OPTIONS.timerStateIcon.classList.replace('fa-fire', 'fa-coffee');
                 OPTIONS.progressBar.classList.add('clock__progress--break');
+                OPTIONS.display.classList.remove('clock__display--pulse');
                 break;
         }
 
