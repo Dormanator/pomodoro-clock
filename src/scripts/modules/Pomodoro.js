@@ -49,11 +49,11 @@ const Pomodoro = function () {
         if (currentTimerState === 1) {
             stateEnd = 'Work';
             stateStart = 'resting';
-            startingStateIcon = '/assets/images/coffee.svg';
+            startingStateIcon = 'assets/images/coffee.svg';
         } else {
             stateEnd = 'Rest';
             stateStart = 'working';
-            startingStateIcon = '/assets/images/fire.svg';
+            startingStateIcon = 'assets/images/fire.svg';
         }
 
         const noticeTitle = stateEnd + ' state over, begin ' + stateStart;
