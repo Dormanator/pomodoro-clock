@@ -877,11 +877,11 @@ var Pomodoro = function Pomodoro() {
         if (currentTimerState === 1) {
             stateEnd = 'Work';
             stateStart = 'resting';
-            startingStateIcon = '/assets/images/coffee.svg';
+            startingStateIcon = 'assets/images/coffee.svg';
         } else {
             stateEnd = 'Rest';
             stateStart = 'working';
-            startingStateIcon = '/assets/images/fire.svg';
+            startingStateIcon = 'assets/images/fire.svg';
         }
 
         var noticeTitle = stateEnd + ' state over, begin ' + stateStart;
