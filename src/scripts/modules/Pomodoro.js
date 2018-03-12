@@ -1,7 +1,7 @@
 const Pomodoro = function () {
-
+    // initalize contaner for user set options via 'set'
     const OPTIONS = {};
-
+    // boilerplate initalized variables to be used throughout
     let seconds = 0,
         intervalLength,
         timer,
@@ -65,33 +65,39 @@ const Pomodoro = function () {
     }
 
     function formatOutput(secondsInput) {
-        // simple function to convert seconds on backend to minutes & seconds on frontend
+        // simple function to convert seconds on backend to mm:ss on frontend
         const secondsToDisplay = secondsInput % 60,
             minutesToDisplay = Math.floor(secondsInput / 60);
         return padDigit(minutesToDisplay) + ':' + padDigit(secondsToDisplay);
     }
 
     function calculateProgress() {
+        // function to calculate progress as a vause between 0 and 1, to update progress bar
         const timePassed = intervalLength - seconds;
         return timePassed / intervalLength;
     }
 
     function updateDisplay(secondsInput = seconds) {
+        // updaing the main mm:ss display
         OPTIONS.display.textContent = formatOutput(secondsInput);
     }
 
     function startTimer(value) {
+        // if there are no existing timer, that was paused, then grab teh user input value
         if (seconds === 0) {
             seconds = value;
         }
+        // otherwise log teh start time nd start the time
+        // decrease teh existing value stored in 'seconds' each second
         startTime = getDateAsSeconds();
         timer = window.setInterval(decrement, 1000);
-        // and which timer ui to show
+        // and update teh display and determine which timer ui to show
         updateDisplay();
         determineTimerStateUi();
     }
 
     function pauseTimer() {
+        // clear the set interval but do not clear the 'seconds' to pause timer
         window.clearInterval(timer);
     }
 
@@ -128,6 +134,8 @@ const Pomodoro = function () {
     }
 
     function decrement() {
+        // callback function to decrease timer value each second
+        // while also updating display elements and checking if the timer is over
         seconds--;
         OPTIONS.progressUpdate(calculateProgress());
         updateDisplay();
@@ -135,6 +143,7 @@ const Pomodoro = function () {
     }
 
     function resetTimer() {
+        // function to completely reset timer values and states to default
         window.clearInterval(timer);
         seconds = 0;
         currentTimerState = 0;
@@ -165,6 +174,7 @@ const Pomodoro = function () {
     }
 
     function determineTimerStateUi() {
+        // based on teh timer state show the correct ui elements
         switch (currentTimerState) {
             case 0:
                 OPTIONS.display.classList.add('clock__display--pulse');
@@ -186,6 +196,7 @@ const Pomodoro = function () {
     }
 
     function logCorrectness() {
+        // a function to determine if the timer was off
         const endTime = getDateAsSeconds(),
             timePassed = Math.round(endTime - startTime);
         console.log(timePassed + ' seconds have passed');

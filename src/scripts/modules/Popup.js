@@ -1,6 +1,7 @@
 const Popup = function () {
     let notificationAllowed = 0;
 
+    // ask teh user for permission on load and store their response for theri session
     function establishNotifyPermissions() {
         if ('Notification' in window) {
             if (Notification.permission === 'granted') {
@@ -15,6 +16,7 @@ const Popup = function () {
         }
     }
 
+    // if we have permission, create a notification with a title and icon based on teh message input object
     function notifyUser(message) {
         if (Boolean(notificationAllowed)) {
             const OPTIONS = { icon: message.icon };
